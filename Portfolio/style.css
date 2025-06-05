@@ -1,0 +1,381 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+:root {
+    /* Cyber Theme (Default) */
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --highlight-color: #ff0000;
+    --sidebar-background: rgba(26, 26, 26, 0.8);
+    --topbar-background: rgba(26, 26, 26, 0.8);
+    --link-color: #00ffff;
+    --link-hover-color: #ff0000;
+    --border-color: #00ffff;
+    --box-shadow-color: #ff0000;
+    --hover-overlay: rgba(255, 255, 255, 0.1);
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+     /* Spacing scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Text sizes */
+    --text-size-xs: 0.75rem;
+    --text-size-sm: 0.875rem;
+    --text-size-md: 1rem;
+    --text-size-lg: 1.25rem;
+    --text-size-xl: 1.5rem;
+    --text-size-2xl: 2rem;
+    --text-size-3xl: 2.5rem;
+    --max-width-form: 700px;
+}
+
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 2rem;
+    padding: 0;
+    line-height: 2;
+}
+
+
+/* Typography */
+h1, h2, h3 {
+    color: var(--highlight-color);
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: var(--text-size-3xl);
+}
+
+h2 {
+    font-size: var(--text-size-2xl);
+}
+
+h3 {
+    font-size: var(--text-size-xl);
+}
+
+p {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+    font-size: var(--text-size-md);
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: var(--text-size-md);
+}
+
+/* Lists */
+main ul, main ol {
+    margin: 0 var(--space-md) var(--space-md);
+    padding: var(--space-sm) 0;
+    list-style-type: disc;
+    background-color: transparent;
+    font-size: var(--text-size-md);
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+
+/* Main Header & Footer */
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-lg);
+}
+main > header,
+main > footer {
+    background-color: var(--topbar-background);
+    padding: var(--space-md);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+main > header {
+    border-bottom: 1px solid var(--border-color);
+}
+/* Sidebar layout for main */
+.sidebar {
+    order: 0;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    min-width: 120px;
+    max-width: 200px;
+    height: 75vh;
+    background-color: var(--sidebar-background);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    padding: var(--space-lg) var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    border-right: 1px solid var(--border-color);
+    z-index: 10;
+}
+.survey-form {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-left: var(--space-lg);
+    display: flex;
+    flex-direction: column; 
+    gap: var(--space-lg); 
+    justify-content: center;
+}
+/* Main content next to sidebar */
+.main-content {
+    order: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    padding-left: var(--space-lg);
+}
+body > header,
+body > footer {
+    background-color: var(--topbar-background);
+    padding: var(--space-md);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+body > header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+body > footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Article Layout */
+article header,
+article footer {
+    background-color: transparent;
+    padding: var(--space-sm) 0;
+    text-align: left;
+    box-shadow: none;
+    border: none;
+}
+section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+    border-radius: var(--space-sm);
+}
+.question {
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+    }
+.question > input {
+    margin-right: var(--space-sm);
+    border-radius: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    transition: background-color 0.3s ease;
+
+}
+.question > input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--highlight-color);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: 0 auto var(--space-lg) auto;  /* centers the form */
+    border: var(--space-xs) solid var(--border-color);
+    border-radius: var(--space-md);
+    max-width: var(--max-width-form);
+    padding: var(--space-md);
+}
+form > button {
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-sm) var(--space-xs);
+
+}
+form> section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    background-color: var(--background-color);
+
+}
+form > section > h3 {
+    margin: 0;
+    padding-right: var(--space-sm);
+    white-space: nowrap; 
+    align-self: center; 
+    font-size: var(--text-size-lg); 
+}
+form > section > fieldset {
+    flex: 1; 
+    border: none;
+    border-radius: var(--space-xs);
+    padding: var(--space-sm);
+    background-color: rgba(26, 26, 26, 0.8); /* Adjusted for better contrast */
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-xs);
+}
+form > section > fieldset > legend {
+    font-size: var(--text-size-sm); /* Adjusted for better hierarchy */
+    color: var(--highlight-color);
+    padding: var(--space-xs) 0;
+    padding: var(--space-xs);
+}
+/* Sidebar Styles */
+.sidebar {
+    
+    top: 15px;
+    left: 0;
+    width: 100px;
+    height: 75vh;
+    background-color: var(--sidebar-background);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    padding: var(--space-lg) var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    border-right: 1px solid var(--border-color);
+}
+/* Reusable spacing class */
+.spacing-sm {
+    margin-bottom: var(--space-sm);
+}
+
+form > .legal-name
+{
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-right: var(--space-xs); /* Fallback for older browsers */
+    border: 1px solid var(--border-color);
+    border-radius: var(--space-xs);
+    padding: var(--space-sm);
+}
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin: 0;
+    padding: var(--space-md);
+    list-style-type: none;
+    background-color: var(--sidebar-background);
+    border-radius: var(--space-xs);
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--space-xs);
+    transition: all 0.3s ease;
+    font-size: var(--text-size-md);
+}
+
+nav ul li a:hover {
+    background-color: var(--hover-overlay);
+}
+
+/* ==========================================================================
+   Theme Toggle
+   ========================================================================== */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-overlay);
+    border-color: var(--link-hover-color);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Hide sidebar on mobile and tablet screens */
+@media (max-width: 768px) {
+    #sidebar,
+    .sidebar {
+        display: none !important;
+    }
+    
+    main {
+        flex-direction: column;
+        padding: var(--space-sm);
+    }
+    
+    article {
+        width: 100%;
+        max-width: none;
+    }
+    
+    form {
+        max-width: 100%;
+        margin: 0;
+    }
+    form > section {
+    flex-direction: column;
+}
+
+    form > section > fieldset {
+        flex-direction: column;
+    }
+    
+    form > section > fieldset > legend {
+        margin-bottom: var(--space-xs);
+    }
+    
+    form > section > fieldset > input,
+    form > section > fieldset > select {
+        width: 100%;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .survey-form {
+        padding-left: 0;
+    }
+}
+
+
+/* Hide sidebar on small tablets too */
+@media (max-width: 1024px) {
+    .sidebar {
+        display: none;
+    }
+    
+    main {
+        justify-content: center;
+    }
+}

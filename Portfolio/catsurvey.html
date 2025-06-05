@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple cat survey form to gather information about cat ownership and preferences.">
+    <title>Cat Survey</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Cat Survey</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h3>About This Survey</h3>
+            <p>This survey aims to gather insights about cat ownership and preferences. Your feedback is valuable!</p>
+        </aside>
+        <article class="survey-form">
+            <header>
+                <h2>Cat Survey</h2>
+            </header>
+            <p>Welcome to the Cat Survey! Please answer the following questions:</p>
+            <form id="cat-survey-form">
+                <fieldset class="legal-name">
+                    <legend>Legal Name</legend>
+                    <div class="question"><label for="first-name">First Name:</label><input id="first-name" name="first-name" type="text" required autocomplete="given-name" placeholder="Enter your first name"></div>
+                    <div class="question"><label for="last-name">Last Name:</label><input id="last-name" name="last-name" type="text" required autocomplete="family-name" placeholder="Enter your last name"></div>
+                </fieldset>
+                <!-- <p class="question"><label for="name">Name:</label><input id="name" type="text" required autocomplete="name" placeholder="Enter your name"></p> -->
+                <fieldset class="question"><label for="email">Email:</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="Enter your email"></fieldset>
+              <section class="cat-info">
+                <h3>Cat Information</h3>
+                <fieldset class="question">
+                    <legend>Do you have a cat?</legend>
+                    <input type="radio" id="yes" name="cat" value="yes" required>
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no" name="cat" value="no">
+                    <label for="no">No</label>
+                </fieldset>
+                <fieldset class="question">
+                    <legend>What breed is your cat?</legend>
+                    <select id="cat-breed" name="breed">
+                        <option value="" disabled selected>Select a breed</option>
+                        <option value="siamese">Siamese</option>
+                        <option value="persian">Persian</option>
+                        <option value="maine-coon">Maine Coon</option>
+                        <option value="bengal">Bengal</option>
+                        <option value="domestic-shorthair">Domestic Shorthair</option>
+                    </select>
+                </fieldset>
+                </section>
+                <fieldset class="question">
+                    <legend>Sign up for our newsletter:</legend>
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                </fieldset>
+                <fieldset class="question">
+                    <legend>Upload a photo of your cat:</legend>
+                    <input type="file" id="cat-photo" name="cat-photo" accept="image/*">
+                </fieldset>
+                <button id="submit" type="submit">Submit</button>
+
+            </form>
+        </article>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 moonlitrune</p>
+    </footer>
+    </body>
+</html>
