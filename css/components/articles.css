@@ -1,0 +1,168 @@
+/* ==========================================================================
+   ARTICLE COMPONENTS
+   ========================================================================== */
+
+/* Base article styles */
+article {
+    background-color: var(--surface-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    flex: 1;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    min-height: 400px;
+}
+
+/* Article headers and footers */
+article header,
+article footer {
+    background-color: transparent;
+    padding: var(--space-sm) 0;
+    text-align: left;
+    box-shadow: none;
+    border: none;
+}
+
+/* Article sections */
+article section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius-base);
+    transition: all var(--duration-base) ease;
+    min-height: 150px;
+}
+
+article section:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Smooth section transitions */
+article section {
+    transition: opacity var(--duration-base) ease;
+}
+
+/* Survey form specific styling */
+.survey-form {
+    width: 100%;
+    max-width: var(--max-width-form);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.survey-form header {
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.survey-form header h1,
+.survey-form header h2 {
+    color: var(--highlight-color);
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-2xl);
+}
+
+.survey-form header p {
+    color: var(--text-color);
+    font-size: var(--text-lg);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Question styling */
+.question {
+    margin-bottom: var(--space-lg);
+    padding: var(--space-lg);
+    background-color: var(--surface-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-base);
+}
+
+.question input {
+    margin-right: var(--space-sm);
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-sm);
+    transition: background-color var(--duration-base) ease;
+}
+
+.question input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--highlight-color);
+}
+
+/* Code snippet styling */
+details {
+    margin-top: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-base);
+    padding: var(--space-sm);
+    background-color: rgba(0, 255, 255, 0.02);
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--link-color);
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--duration-base) ease;
+}
+
+details summary:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+}
+
+details[open] summary {
+    margin-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+pre {
+    background-color: var(--color-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    overflow-x: auto;
+    margin: var(--space-md) 0;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    line-height: 1.4;
+}
+
+/* Code syntax highlighting */
+pre code {
+    color: var(--text-color);
+}
+
+/* Highlight HTML tags */
+code:contains('<') {
+    color: var(--color-accent);
+}
+
+/* Portfolio specific content sections */
+.portfolio-highlight {
+    border-left: 4px solid var(--link-color);
+    padding-left: var(--space-md);
+    margin: var(--space-lg) 0;
+}

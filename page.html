@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Job Application - My Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="script.js"></script>
+</head>
+<body>    <header>
+        <div class="title-box">
+            <p class="title">Job Application Form</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="catsurvey.html">Cat Survey</a></li>
+                <li><a href="page.html">Job Application</a></li>
+            </ul>
+        </nav>        <button id="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="menu-icon">☰</span>
+        </button>
+        <button id="neon-toggle" class="neon-toggle" aria-label="Toggle neon effects">
+            ⚡ NEON
+        </button>    </header>
+      <main>
+        <article class="survey-form">
+            <header>
+                <h1>Job Application</h1>
+                <p>Please fill out the form below to apply for a position with our team.</p>
+            </header>
+            
+            <form>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <select id="position" name="position" required>
+                    <option value="" disabled selected>Select Position</option>
+                    <option value="developer">Developer</option>
+                    <option value="designer">Designer</option>
+                    <option value="manager">Manager</option>
+                </select>
+                
+                <fieldset class="radio-group">
+                    <legend>Availability</legend>
+                    <label>
+                        <input type="radio" id="full-time" name="availability" value="full-time" required>
+                        Full-Time
+                    </label>
+                    <label>
+                        <input type="radio" id="part-time" name="availability" value="part-time" required>
+                        Part-Time
+                    </label>
+                    <label>
+                        <input type="radio" id="contract" name="availability" value="contract" required>
+                        Contract
+                    </label>
+                </fieldset>
+                
+                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Submit Application</button>
+            </form>
+        </article>
+    </main>
+    
+    <footer>
+        <p>Thank you for visiting my portfolio!</p>
+        <p>&copy; 2025 moonlitrune</p>
+    </footer>
+
+</body>
+</html>

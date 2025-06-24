@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - My Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="title-box">
+            <p class="title">My Portfolio</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="catsurvey.html">Cat Survey</a></li>
+                <li><a href="page.html">Job Application</a></li>
+            </ul>
+        </nav>
+        <button id="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="menu-icon">☰</span>
+        </button>
+        <button id="neon-toggle" class="neon-toggle" aria-label="Toggle neon effects">
+            ⚡ NEON
+        </button>
+    </header>
+    
+    <main>
+        <article>
+            <h1>My Projects</h1>
+            <p>Here's a showcase of my web development work and learning journey.</p>
+              <section>
+                <h2>Featured Projects</h2>
+                
+                <div class="content-section">
+                    <h3><a href="page.html">Job Application Form</a></h3>
+                    <p>Professional form with validation, fieldsets, and accessibility features</p>
+                    <details>
+                        <summary>View Code Snippet</summary>
+                        <pre><code>&lt;fieldset class="radio-group"&gt;
+    &lt;legend&gt;Availability&lt;/legend&gt;
+    &lt;label&gt;
+        &lt;input type="radio" id="full-time" name="availability" 
+               value="full-time" required&gt;
+        Full-Time
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type="radio" id="part-time" name="availability" 
+               value="part-time" required&gt;
+        Part-Time
+    &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+                        <p><strong>Skills shown:</strong> Semantic HTML, form validation, accessibility with fieldsets and legends</p>
+                    </details>
+                </div>
+
+                <div class="content-section">
+                    <h3><a href="catsurvey.html">Cat Survey</a></h3>
+                    <p>Interactive survey with various input types and form validation</p>
+                    <details>
+                        <summary>View Code Snippet</summary>
+                        <pre><code>&lt;fieldset class="legal-name"&gt;
+    &lt;legend&gt;Legal Name&lt;/legend&gt;
+    &lt;div class="question"&gt;
+        &lt;label for="first-name"&gt;First Name:&lt;/label&gt;
+        &lt;input id="first-name" name="first-name" type="text" 
+               required autocomplete="given-name" 
+               placeholder="Enter your first name"&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+                        <p><strong>Skills shown:</strong> Form organization, autocomplete attributes, user experience design</p>
+                    </details>
+                </div>
+
+                <div class="content-section">
+                    <h3><a href="about.html">About Me</a></h3>
+                    <p>Personal introduction with content cycling functionality</p>
+                    <details>
+                        <summary>View Code Snippet</summary>
+                        <pre><code>// Content cycling functionality
+const changeContentBtn = document.querySelector('#change-content');
+const sections = document.querySelectorAll('article section');
+let currentSection = 0;
+
+changeContentBtn.addEventListener('click', function() {
+    sections[currentSection].style.opacity = '0';
+    setTimeout(() => {
+        sections[currentSection].style.display = 'none';
+        currentSection = (currentSection + 1) % sections.length;
+        sections[currentSection].style.display = 'block';
+        setTimeout(() => {
+            sections[currentSection].style.opacity = '1';
+        }, 50);
+    }, 300);
+});</code></pre>                        <p><strong>Skills shown:</strong> DOM manipulation, event handling, smooth transitions, user interaction</p>
+                    </details>
+                </div>
+
+                <div class="content-section">
+                    <h3><a href="contact.html">Contact Me</a></h3>
+                    <p>Clean contact page with professional layout and multiple contact methods</p>
+                    <details>
+                        <summary>View Code Snippet</summary>
+                        <pre><code>&lt;section&gt;
+    &lt;h2&gt;Email&lt;/h2&gt;
+    &lt;p&gt;You can email me at:&lt;/p&gt;
+    &lt;p&gt;&lt;a href="mailto:a.j.l.laduke@gmail.com"&gt;
+        a.j.l.laduke@gmail.com
+    &lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;LinkedIn&lt;/h2&gt;
+    &lt;p&gt;&lt;a href="https://www.linkedin.com/in/yourprofile" 
+          target="_blank"&gt;Your LinkedIn Profile&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+                        <p><strong>Skills shown:</strong> Semantic HTML, contact forms, external links, professional layout</p>
+                    </details>
+                </div>
+            </section>
+            
+            <section>
+                <h2>CSS & Animation Showcase</h2>
+                
+                <div class="content-section">
+                    <h3>🐠 Neon Fish Tank Animation</h3>
+                    <p>Custom CSS animations with swimming fish, water effects, and accessibility-friendly design</p>
+                    <details>
+                        <summary>View CSS Code</summary>
+                        <pre><code>/* Swimming fish animations */
+.title-box::before {
+    content: '🐠';
+    position: absolute;
+    top: 20%;
+    left: -50px;
+    font-size: 2rem;
+    animation: fish-swim 8s linear infinite;
+    filter: drop-shadow(0 0 10px var(--color-primary));
+}
+
+@keyframes fish-swim {
+    0% { 
+        left: -50px; 
+        transform: translateY(0px) scaleX(1);
+    }
+    25% { 
+        transform: translateY(-10px) scaleX(1);
+    }
+    50% { 
+        transform: translateY(5px) scaleX(1);
+    }
+    75% { 
+        transform: translateY(-5px) scaleX(1);
+    }
+    100% { 
+        left: calc(100% + 50px); 
+        transform: translateY(0px) scaleX(1);
+    }
+}</code></pre>
+                        <p><strong>Skills shown:</strong> Advanced CSS animations, keyframes, transforms, filters, CSS variables</p>
+                    </details>
+                </div>
+
+                <div class="content-section">
+                    <h3>⚡ Accessibility Toggle System</h3>
+                    <p>Site-wide animation toggle with localStorage persistence and system preference detection</p>
+                    <details>
+                        <summary>View JavaScript Code</summary>
+                        <pre><code>// Neon Effects Toggle with Persistence
+const neonToggle = document.querySelector('#neon-toggle');
+const body = document.body;
+
+// Check for saved preference or system preference
+const savedPreference = localStorage.getItem('neonEffectsEnabled');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let neonEnabled = true;
+if (savedPreference !== null) {
+    neonEnabled = savedPreference === 'true';
+} else if (prefersReducedMotion) {
+    neonEnabled = false;
+}
+
+// Apply initial state
+if (!neonEnabled) {
+    body.classList.add('reduce-motion');
+    neonToggle.textContent = '💤 STATIC';
+}
+
+neonToggle.addEventListener('click', function() {
+    body.classList.toggle('reduce-motion');
+    
+    if (body.classList.contains('reduce-motion')) {
+        neonToggle.textContent = '💤 STATIC';
+        localStorage.setItem('neonEffectsEnabled', 'false');
+    } else {
+        neonToggle.textContent = '⚡ NEON';
+        localStorage.setItem('neonEffectsEnabled', 'true');
+    }
+});</code></pre>
+                        <p><strong>Skills shown:</strong> LocalStorage, media queries, accessibility, event handling, state management</p>
+                    </details>
+                </div>
+
+                <div class="content-section">
+                    <h3>🎨 CSS Custom Properties & Theming</h3>
+                    <p>Modular CSS architecture with custom properties for maintainable theming</p>
+                    <details>
+                        <summary>View CSS Variables</summary>
+                        <pre><code>:root {
+    /* Color Palette */
+    --color-primary: #00ffff;
+    --color-secondary: #ff0000;
+    --color-accent: #ff6b9d;
+    --color-text: #e0e0e0;
+    --color-background: #1a1a1a;
+    
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    
+    /* Animation Timing */
+    --duration-fast: 0.15s;
+    --duration-base: 0.3s;
+    --duration-slow: 0.6s;
+}
+
+/* Usage in components */
+.neon-toggle {
+    color: var(--color-primary);
+    transition: all var(--duration-base) ease;
+    padding: var(--space-sm) var(--space-md);
+}</code></pre>
+                        <p><strong>Skills shown:</strong> CSS custom properties, design systems, maintainable architecture</p>
+                    </details>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Technical Skills Demonstrated</h2>
+                <ul>
+                    <li><strong>HTML5:</strong> Semantic markup, forms, accessibility (ARIA labels, fieldsets)</li>
+                    <li><strong>CSS3:</strong> Custom animations, responsive design, CSS variables, modular architecture</li>
+                    <li><strong>JavaScript:</strong> DOM manipulation, event handling, local storage, accessibility toggles</li>
+                    <li><strong>Design:</strong> Neon cyberpunk theme, fish tank animations, user experience</li>
+                    <li><strong>Accessibility:</strong> Reduced motion support, keyboard navigation, screen reader friendly</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>Project Highlights</h2>
+                <div class="content-section">
+                    <h3>🐠 Neon Fish Tank Theme</h3>
+                    <p>Custom animated header with swimming fish, bubble effects, and accessibility-friendly neon flickering. Demonstrates advanced CSS animations and user preference respect.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h3>⚡ Accessibility Toggle</h3>
+                    <p>Site-wide animation toggle that persists across pages using localStorage. Respects user's system preferences for reduced motion.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h3>📱 Responsive Design</h3>
+                    <p>Mobile-first approach with collapsible navigation, flexible layouts, and optimized form experiences across all device sizes.</p>
+                </div>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>Thank you for visiting my portfolio!</p>
+        <p>&copy; 2025 moonlitrune</p>
+    </footer>
+</body>
+</html>

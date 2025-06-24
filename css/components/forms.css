@@ -1,0 +1,175 @@
+/* ==========================================================================
+   FORM COMPONENTS
+   ========================================================================== */
+
+/* Base form styles */
+form {
+    background-color: var(--surface-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--box-shadow);
+    max-width: var(--max-width-form);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+/* Form container for better spacing */
+.survey-form {
+    width: 100%;
+    max-width: var(--max-width-form);
+    margin: 0 auto;
+}
+
+.survey-form header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+.survey-form header h1,
+.survey-form header h2 {
+    color: var(--highlight-color);
+    margin-bottom: var(--space-sm);
+}
+
+.survey-form header p {
+    color: var(--text-color);
+    font-size: var(--text-lg);
+    opacity: 0.9;
+}
+
+/* Form inputs */
+form input,
+form select,
+form textarea {
+    padding: var(--space-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: var(--text-base);
+    font-family: 'Courier New', monospace;
+    transition: border-color var(--duration-base) ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border: 2px solid var(--highlight-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
+
+/* Form labels */
+form label {
+    font-size: var(--text-base);
+    color: var(--text-color);
+    margin-bottom: var(--space-xs);
+    display: block;
+}
+
+/* Form buttons */
+form button {
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-sm) var(--space-xs);
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all var(--duration-base) ease;
+    font-family: 'Courier New', monospace;
+    font-size: var(--text-base);
+}
+
+form button:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+    background: rgba(0, 255, 255, 0.05);
+}
+
+/* Fieldsets */
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    background-color: var(--surface-background);
+}
+
+fieldset legend {
+    font-size: var(--text-lg);
+    color: var(--highlight-color);
+    padding: 0 var(--space-sm);
+    font-weight: bold;
+}
+
+/* Radio and checkbox groups */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    margin-right: var(--space-sm);
+    width: auto;
+}
+
+.radio-group label,
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/* Legal name fieldset */
+.legal-name {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    background-color: var(--surface-background);
+}
+
+.legal-name .question {
+    margin-bottom: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.legal-name .question label {
+    font-weight: bold;
+    color: var(--link-color);
+}
+
+/* Form sections */
+form > section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    padding: var(--space-md);
+    background-color: rgba(0, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+form > section > h3 {
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--link-color);
+    font-size: var(--text-lg);
+}

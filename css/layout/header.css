@@ -1,0 +1,35 @@
+/* ==========================================================================
+   HEADER LAYOUT
+   ========================================================================== */
+
+header {
+    background-color: var(--surface-background);
+    padding: var(--space-md);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--radius-base);
+    color: var(--text-color);
+    position: relative;
+    margin-bottom: var(--space-lg);
+}
+
+/* Navigation positioning within header */
+header nav {
+    margin-top: var(--space-md);
+}
+
+/* Menu toggle button positioning */
+#menu-toggle {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    z-index: var(--z-sticky);
+}
+
+/* Neon toggle button positioning */
+#neon-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: var(--z-fixed);
+}

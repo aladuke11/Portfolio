@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../Html-css-couse"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Portfolio"
+	}
+}

@@ -1,0 +1,791 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+:root {
+    /* Cyber Theme (Default) */
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --highlight-color: #ff0000;
+    --sidebar-background: rgba(26, 26, 26, 0.8);
+    --topbar-background: rgba(26, 26, 26, 0.8);
+    --link-color: #00ffff;
+    --link-hover-color: #ff0000;
+    --border-color: #00ffff;
+    --box-shadow-color: #ff0000;
+    --hover-overlay: rgba(255, 255, 255, 0.1);
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+     /* Spacing scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Text sizes */
+    --text-size-xs: 0.75rem;
+    --text-size-sm: 0.875rem;
+    --text-size-md: 1rem;
+    --text-size-lg: 1.25rem;
+    --text-size-xl: 1.5rem;
+    --text-size-2xl: 2rem;
+    --text-size-3xl: 2.5rem;
+    --max-width-form: 900px;
+}
+
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1rem;
+    padding: 0;
+    line-height: 2;
+}
+/* title box - Neon Fish Tank */
+.title-box {
+    background: linear-gradient(135deg, 
+                #001122 0%, 
+                #003344 20%, 
+                #004466 40%, 
+                #002244 60%, 
+                #001133 80%, 
+                #000811 100%);
+    padding: var(--space-lg);
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 
+                0 0 60px rgba(0, 200, 255, 0.4),
+                inset 0 0 50px rgba(0, 100, 150, 0.2);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    border: 3px solid #00ffff;
+    position: relative;
+    overflow: hidden;
+    animation: water-shimmer 4s ease-in-out infinite;
+}
+
+/* Animated fish swimming across */
+.title-box::before {
+    content: '🐠';
+    position: absolute;
+    top: 20%;
+    left: -50px;
+    font-size: 2rem;
+    animation: fish-swim 8s linear infinite;
+    filter: drop-shadow(0 0 10px #00ffff);
+}
+
+.title-box::after {
+    content: '🐟';
+    position: absolute;
+    bottom: 25%;
+    right: -50px;
+    font-size: 1.5rem;
+    animation: fish-swim-reverse 6s linear infinite;
+    filter: drop-shadow(0 0 8px #ff6b9d);
+}
+
+/* Floating bubbles effect */
+.title-box:hover::before {
+    content: '🫧';
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 1rem;
+    animation: bubble-float 3s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.title-box:hover::after {
+    content: '🐟';
+    position: absolute;
+    bottom: 25%;
+    right: -50px;
+    font-size: 1.5rem;
+    animation: fish-swim-reverse 6s linear infinite;
+    filter: drop-shadow(0 0 8px #ff6b9d);
+}
+
+@keyframes bubble-float {
+    0% { 
+        transform: translateY(0px) scale(0.8);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: translateY(-30px) scale(1);
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(-60px) scale(0.6);
+        opacity: 0;
+    }
+}
+
+/* Neon water shimmer animation */
+@keyframes water-shimmer {
+    0%, 100% { 
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 
+                    0 0 60px rgba(0, 200, 255, 0.4),
+                    inset 0 0 50px rgba(0, 100, 150, 0.2);
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 
+                    0 0 80px rgba(0, 200, 255, 0.6),
+                    inset 0 0 60px rgba(0, 150, 200, 0.3);
+    }
+}
+
+/* Fish swimming left to right */
+@keyframes fish-swim {
+    0% { 
+        left: -50px; 
+        transform: translateY(0px) scaleX(1);
+    }
+    25% { 
+        transform: translateY(-10px) scaleX(1);
+    }
+    50% { 
+        transform: translateY(5px) scaleX(1);
+    }
+    75% { 
+        transform: translateY(-5px) scaleX(1);
+    }
+    100% { 
+        left: calc(100% + 50px); 
+        transform: translateY(0px) scaleX(1);
+    }
+}
+
+/* Fish swimming right to left */
+@keyframes fish-swim-reverse {
+    0% { 
+        right: -50px; 
+        transform: translateY(0px) scaleX(-1);
+    }
+    25% { 
+        transform: translateY(8px) scaleX(-1);
+    }
+    50% { 
+        transform: translateY(-12px) scaleX(-1);
+    }
+    75% { 
+        transform: translateY(3px) scaleX(-1);
+    }
+    100% { 
+        right: calc(100% + 50px); 
+        transform: translateY(0px) scaleX(-1);
+    }
+}
+.title-box h1, .title-box .title {
+    color: #00ffff;
+    margin: 0;
+    font-size: var(--text-size-3xl);
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px #00ffff, 
+                 0 0 20px #00ffff, 
+                 0 0 30px #0088ff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+    from {
+        text-shadow: 0 0 10px #00ffff, 
+                     0 0 20px #00ffff, 
+                     0 0 30px #0088ff;
+    }
+    to {
+        text-shadow: 0 0 15px #00ffff, 
+                     0 0 25px #00ffff, 
+                     0 0 35px #0088ff,
+                     0 0 40px #0066cc;
+    }
+}
+
+
+/* Typography */
+h1, h2, h3 {
+    color: var(--highlight-color);
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: var(--text-size-3xl);
+}
+
+h2 {
+    font-size: var(--text-size-2xl);
+}
+
+h3 {
+    font-size: var(--text-size-xl);
+}
+
+p {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+    font-size: var(--text-size-md);
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: var(--text-size-md);
+}
+
+/* Lists */
+main ul, main ol {
+    margin: 0 var(--space-md) var(--space-md);
+    padding: var(--space-sm) 0;
+    list-style-type: disc;
+    background-color: transparent;
+    font-size: var(--text-size-md);
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+
+/* Main Header & Footer */
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+    background-color: var(--background-color);
+    gap: var(--space-lg);
+    width: 100%;
+}
+main > header,
+main > footer {
+    background-color: var(--topbar-background);
+    padding: var(--space-md);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+main > header {
+    border-bottom: 1px solid var(--border-color);
+}
+/* Sidebar layout for main */
+.sidebar {
+    order: 0;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    min-width: 200px;
+    max-width: 250px;
+    height: 75vh;
+    background-color: var(--sidebar-background);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    padding: var(--space-lg) var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    border-right: 1px solid var(--border-color);
+    z-index: 10;
+}
+.survey-form {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-left: var(--space-lg);
+    display: flex;
+    flex-direction: column; 
+    gap: var(--space-lg); 
+    justify-content: center;
+}
+/* Main content next to sidebar */
+.main-content {
+    order: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    padding-left: var(--space-lg);
+}
+body > header,
+body > footer {
+    background-color: var(--topbar-background);
+    padding: var(--space-md);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+body > header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+body > footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Article Layout */
+article header,
+article footer {
+    background-color: transparent;
+    padding: var(--space-sm) 0;
+    text-align: left;
+    box-shadow: none;
+    border: none;
+}
+section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    padding: var(--space-xs);
+    margin-bottom: 1rem;
+    border-radius: var(--space-sm);
+    transition: all 0.3s ease;
+    min-height: 150px;
+}
+.question {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--border-color);}
+.question > input {
+    margin-right: var(--space-sm);
+    border-radius: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    transition: background-color 0.3s ease;
+
+}
+.question > input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--highlight-color);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: 0 auto var(--space-lg) auto;  /* centers the form */
+    border: var(--space-xs) solid var(--border-color);
+    border-radius: var(--space-md);
+    max-width: var(--max-width-form);
+    padding: var(--space-md);
+}
+form > button {
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-sm) var(--space-xs);
+
+}
+form> section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    background-color: var(--background-color);
+
+}
+form > section > h3 {
+    margin: 0;
+    padding-right: var(--space-sm);
+    white-space: nowrap; 
+    align-self: center; 
+    font-size: var(--text-size-lg); 
+}
+form > section > fieldset {
+    flex: 1; 
+    border: none;
+    border-radius: var(--space-xs);
+    padding: var(--space-sm);
+    background-color: rgba(26, 26, 26, 0.8); /* Adjusted for better contrast */
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-xs);
+}
+form > section > fieldset > legend {
+    font-size: var(--text-size-sm); /* Adjusted for better hierarchy */
+    color: var(--highlight-color);
+    padding: var(--space-xs) 0;
+    padding: var(--space-xs);
+}
+/* Sidebar Styles */
+.sidebar {
+    
+    top: 15px;
+    left: 0;
+    width: 100px;
+    height: 75vh;
+    background-color: var(--sidebar-background);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    padding: var(--space-lg) var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    border-right: 1px solid var(--border-color);
+}
+/* Reusable spacing class */
+.spacing-sm {
+    margin-bottom: var(--space-sm);
+}
+
+form > .legal-name
+{
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-right: var(--space-xs); /* Fallback for older browsers */
+    border: 1px solid var(--border-color);
+    border-radius: var(--space-xs);
+    padding: var(--space-sm);
+}
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+nav ul, .main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin: 0;
+    padding: var(--space-md);
+    list-style-type: none;
+    background-color: var(--sidebar-background);
+    border-radius: var(--space-xs);
+}
+
+/* Hide menu toggle button on desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: var(--space-sm);
+}
+
+nav ul li, .main-nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a, .main-nav ul li a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--space-xs);
+    transition: all 0.3s ease;
+    font-size: var(--text-size-md);
+}
+
+nav ul li a:hover, .main-nav ul li a:hover {
+    background-color: var(--hover-overlay);
+}
+
+.menu-icon {
+    display: block;
+}
+.title {
+    font-size: var(--text-size-2xl);
+    color: var(--highlight-color);
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+/* Make header relative for dropdown positioning */
+header {
+    position: relative;
+}
+
+/* ==========================================================================
+   Article Styles
+   ========================================================================== */
+article {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: var(--space-md);
+    padding: var(--space-lg);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    flex: 1;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    min-height: 400px;
+}
+/* Smooth section transitions */
+article section {
+    transition: opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   Header and Footer
+   ========================================================================== */
+header, footer {
+    background-color: var(--topbar-background);
+    padding: var(--space-md);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--space-xs);
+    color: var(--text-color);
+}
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+form {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: var(--space-md);
+    padding: var(--space-lg);
+    box-shadow: var(--box-shadow);
+    max-width: var(--max-width-form);
+    margin: 0 auto; /* Centers the form */
+    display: flex;
+    flex-direction: column;
+
+}
+form > section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+form > section > label {
+    flex: 1;
+    min-width: 150px; /* Ensures labels have a minimum width */
+    font-size: var(--text-size-md);
+    color: var(--text-color);
+}
+form > section > input,
+form > section > select,
+form > section > textarea {
+    flex: 2;
+    padding: var(--space-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--space-xs);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: var(--text-size-md);
+    transition: border-color 0.3s ease;
+}
+form > section > input:focus,
+form > section > select:focus,
+form > section > textarea:focus {
+    border: 2px solid var(--highlight-color);
+    box-shadow: 0 0 0 2px rgba(255, 0);
+    outline: none;
+}
+
+/* ==========================================================================
+   Theme Toggle
+   ========================================================================== */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-overlay);
+    border-color: var(--link-hover-color);
+}
+
+/* ==========================================================================
+   Modern Change Content Button
+   ========================================================================== */
+#change-content {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--space-xs);
+    color: var(--text-color);
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--text-size-sm);
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: all 0.2s ease;
+    margin: var(--space-md) 0;
+}
+
+#change-content:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+    background: rgba(0, 255, 255, 0.05);
+}
+
+#change-content:active {
+    transform: translateY(1px);
+}
+
+#change-content .change-icon {
+    font-size: var(--text-size-md);
+    transition: transform 0.2s ease;
+}
+
+#change-content:hover .change-icon {
+    transform: rotate(90deg);
+}
+
+#change-content:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+    background: rgba(0, 255, 255, 0.05);
+}
+
+#change-content:active {
+    transform: translateY(1px);
+}
+
+#change-content .change-icon {
+    font-size: var(--text-size-md);
+    transition: transform 0.2s ease;
+}
+
+#change-content:hover .change-icon {
+    transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Hide sidebar on mobile and tablet screens */
+@media (max-width: 768px) {
+    #sidebar,
+    .sidebar {
+        display: none !important;
+    }
+    
+    main {
+        flex-direction: column;
+        padding: var(--space-sm);
+    }
+    
+    article {
+        width: 100%;
+        max-width: none;
+    }
+    
+    form {
+        max-width: 100%;
+        margin: 0;
+    }
+    form > section {
+    flex-direction: column;
+}
+
+    form > section > fieldset {
+        flex-direction: column;
+    }
+    
+    form > section > fieldset > legend {
+        margin-bottom: var(--space-xs);
+    }
+    
+    form > section > fieldset > input,
+    form > section > fieldset > select {
+        width: 100%;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .survey-form {
+        padding-left: 0;
+    }
+}
+
+/* ==========================================================================
+   Mobile Menu Toggle
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Show menu toggle button on mobile */
+    .menu-toggle {
+        display: block !important;
+    }
+    
+    /* Hide navigation by default on mobile */
+    .main-nav ul {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--sidebar-background);
+        border: 1px solid var(--border-color);
+        border-radius: var(--space-xs);
+        z-index: 1000;
+        margin-top: var(--space-sm);
+    }
+    
+    /* Show navigation when open class is added */
+    .main-nav.open ul {
+        display: flex !important;
+    }
+    
+    .main-nav ul li {
+        width: 100%;
+    }
+    
+    .main-nav ul li a {
+        display: block;
+        padding: var(--space-md);
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+    }
+    
+    .main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: var(--space-md);
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+    }
+    
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+    
+    /* Make header relative for absolute positioning of nav */
+    header {
+        position: relative;
+    }
+}
+
+/* Hide sidebar on small tablets too */
+@media (max-width: 1024px) {
+    .sidebar {
+        display: none;
+    }
+    
+    main {
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   Seaweed Animation
+   ========================================================================== */
+@keyframes seaweed-sway {
+    0%, 100% { 
+        transform: rotate(-2deg);
+    }
+    50% { 
+        transform: rotate(2deg);
+    }
+}

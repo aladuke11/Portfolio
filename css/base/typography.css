@@ -1,0 +1,70 @@
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--highlight-color);
+    margin-bottom: var(--space-md);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+h5 { font-size: var(--text-base); }
+h6 { font-size: var(--text-sm); }
+
+/* Paragraphs */
+p {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+    font-size: var(--text-base);
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color var(--duration-base) ease;
+    font-size: var(--text-base);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+a:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+/* Lists */
+main ul, 
+main ol {
+    margin: 0 var(--space-md) var(--space-md);
+    padding: var(--space-sm) 0;
+    font-size: var(--text-base);
+}
+
+main ul {
+    list-style-type: disc;
+}
+
+main ol {
+    list-style-type: decimal;
+}
+
+/* Strong and emphasis */
+strong {
+    font-weight: bold;
+    color: var(--link-color);
+}
+
+em {
+    font-style: italic;
+    color: var(--color-accent);
+}

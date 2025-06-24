@@ -1,0 +1,22 @@
+input:focus, textarea:focus{
+  border: 2px solid rgb(6, 75, 92);
+}
+form > section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+} 
+form > section > label {
+  font-weight: bold;
+  margin-bottom: var(--space-xs);
+}
+form > section > input,
+form > section > textarea {
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--space-xs);
+    font-size: var(--text-size-md);
+    width: 100%;
+    box-sizing: border-box;
+    }

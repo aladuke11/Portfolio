@@ -1,0 +1,68 @@
+/* ==========================================================================
+   ACCESSIBILITY & REDUCED MOTION
+   ========================================================================== */
+
+/* Reduced motion styles - when animations are disabled */
+.reduce-motion .title-box {
+    animation: none !important;
+}
+
+.reduce-motion .title-box h1, 
+.reduce-motion .title-box .title {
+    animation: none !important;
+    text-shadow: 0 0 5px var(--color-primary), 
+                 0 0 10px var(--color-primary);
+}
+
+.reduce-motion .title-box::before,
+.reduce-motion .title-box::after {
+    animation: none !important;
+    display: none;
+}
+
+.reduce-motion #change-content .change-icon {
+    animation: none !important;
+    transform: none !important;
+}
+
+.reduce-motion .neon-toggle {
+    animation: none !important;
+    border-color: var(--border-color) !important;
+    background: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.reduce-motion .neon-toggle:hover {
+    background: var(--hover-overlay) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Focus indicators */
+*:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #ffffff;
+        --color-secondary: #ffff00;
+        --border-color: #ffffff;
+        --text-color: #ffffff;
+        --background-color: #000000;
+    }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

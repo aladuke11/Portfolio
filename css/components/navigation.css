@@ -1,0 +1,46 @@
+/* ==========================================================================
+   NAVIGATION COMPONENTS
+   ========================================================================== */
+
+/* Main navigation */
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin: 0;
+    padding: var(--space-md);
+    list-style-type: none;
+    background-color: var(--surface-background);
+    border-radius: var(--radius-base);
+}
+
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-base);
+    transition: all var(--duration-base) ease;
+    font-size: var(--text-base);
+    color: var(--text-color);
+}
+
+.main-nav a:hover {
+    background-color: var(--hover-overlay);
+    color: var(--link-color);
+}
+
+.main-nav a:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+/* Navigation states */
+.main-nav a[aria-current="page"] {
+    background-color: var(--link-color);
+    color: var(--background-color);
+}

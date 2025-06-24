@@ -1,0 +1,75 @@
+/* ==========================================================================
+   NEON FISH TANK THEME
+   ========================================================================== */
+
+/* Title box - Neon Fish Tank */
+.title-box {
+    background: linear-gradient(135deg, 
+                #001122 0%, 
+                #003344 20%, 
+                #004466 40%, 
+                #002244 60%, 
+                #001133 80%, 
+                #000811 100%);
+    padding: var(--space-lg);
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 
+                0 0 60px rgba(0, 200, 255, 0.4),
+                inset 0 0 50px rgba(0, 100, 150, 0.2);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    border: 3px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    animation: neon-box-flicker 6s linear infinite;
+}
+
+/* Title text styling */
+.title-box h1, 
+.title-box .title {
+    color: var(--color-primary);
+    margin: 0;
+    font-size: var(--text-3xl);
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px var(--color-primary), 
+                 0 0 10px var(--color-primary), 
+                 0 0 15px var(--color-primary),
+                 0 0 20px var(--color-primary),
+                 0 0 25px #0099ff,
+                 0 0 30px #0066ff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    animation: neon-flicker 4s linear infinite;
+}
+
+/* Swimming fish animations */
+.title-box::before {
+    content: '🐠';
+    position: absolute;
+    top: 20%;
+    left: -50px;
+    font-size: 2rem;
+    animation: fish-swim 8s linear infinite;
+    filter: drop-shadow(0 0 10px var(--color-primary));
+}
+
+.title-box::after {
+    content: '🐟';
+    position: absolute;
+    bottom: 25%;
+    right: -50px;
+    font-size: 1.5rem;
+    animation: fish-swim-reverse 6s linear infinite;
+    filter: drop-shadow(0 0 8px var(--color-accent));
+}
+
+/* Hover effects for bubbles */
+.title-box:hover::before {
+    content: '🫧';
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 1rem;
+    animation: bubble-float 3s ease-in-out infinite;
+    opacity: 0.7;
+}

@@ -1,0 +1,105 @@
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+/* Neon text flicker */
+@keyframes neon-flicker {
+    0%, 95%, 100% {
+        text-shadow: 0 0 5px var(--color-primary), 
+                     0 0 10px var(--color-primary), 
+                     0 0 15px var(--color-primary),
+                     0 0 20px var(--color-primary),
+                     0 0 25px #0099ff,
+                     0 0 30px #0066ff;
+        opacity: 1;
+    }
+    97% {        
+        text-shadow: 0 0 3px var(--color-primary), 
+                     0 0 8px var(--color-primary);
+        opacity: 0.8;
+    }
+}
+
+/* Neon box flicker */
+@keyframes neon-box-flicker {
+    0%, 90%, 100% {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 
+                    0 0 60px rgba(0, 200, 255, 0.4),
+                    inset 0 0 50px rgba(0, 100, 150, 0.2);
+    }
+    95% {
+        border-color: #0088cc;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 
+                    0 0 40px rgba(0, 200, 255, 0.3),
+                    inset 0 0 35px rgba(0, 100, 150, 0.15);
+    }
+}
+
+/* Fish swimming left to right */
+@keyframes fish-swim {
+    0% { 
+        left: -50px; 
+        transform: translateY(0px) scaleX(1);
+    }
+    25% { 
+        transform: translateY(-10px) scaleX(1);
+    }
+    50% { 
+        transform: translateY(5px) scaleX(1);
+    }
+    75% { 
+        transform: translateY(-5px) scaleX(1);
+    }
+    100% { 
+        left: calc(100% + 50px); 
+        transform: translateY(0px) scaleX(1);
+    }
+}
+
+/* Fish swimming right to left */
+@keyframes fish-swim-reverse {
+    0% { 
+        right: -50px; 
+        transform: translateY(0px) scaleX(-1);
+    }
+    25% { 
+        transform: translateY(8px) scaleX(-1);
+    }
+    50% { 
+        transform: translateY(-12px) scaleX(-1);
+    }
+    75% { 
+        transform: translateY(3px) scaleX(-1);
+    }
+    100% { 
+        right: calc(100% + 50px); 
+        transform: translateY(0px) scaleX(-1);
+    }
+}
+
+/* Floating bubbles */
+@keyframes bubble-float {
+    0% { 
+        transform: translateY(0px) scale(0.8);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: translateY(-30px) scale(1);
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(-60px) scale(0.6);
+        opacity: 0;
+    }
+}
+
+/* Seaweed swaying */
+@keyframes seaweed-sway {
+    0%, 100% { 
+        transform: rotate(-2deg);
+    }
+    50% { 
+        transform: rotate(2deg);
+    }
+}

@@ -1,0 +1,105 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    /* Show menu toggle button on mobile */
+    #menu-toggle {
+        display: block !important;
+    }
+    
+    /* Hide navigation by default on mobile */
+    .main-nav ul {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--surface-background);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-base);
+        z-index: var(--z-dropdown);
+        margin-top: var(--space-sm);
+    }
+    
+    /* Show navigation when open class is added */
+    .main-nav.open ul {
+        display: flex !important;
+    }
+    
+    .main-nav ul li {
+        width: 100%;
+    }
+    
+    .main-nav ul li a {
+        display: block;
+        padding: var(--space-md);
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+    }
+    
+    .main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+    
+    /* Adjust main layout for mobile */
+    main {
+        flex-direction: column;
+        padding: var(--space-sm);
+    }
+    
+    /* Make content full width on mobile */
+    article {
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Adjust body margins */
+    body {
+        margin: var(--space-sm);
+    }
+    
+    /* Stack form elements vertically */
+    form > section {
+        flex-direction: column;
+    }
+
+    form > section > fieldset {
+        flex-direction: column;
+    }
+    
+    form > section > fieldset > legend {
+        margin-bottom: var(--space-xs);
+    }
+    
+    form > section > fieldset > input,
+    form > section > fieldset > select {
+        width: 100%;
+        margin-bottom: var(--space-xs);
+    }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+    main {
+        justify-content: center;
+        padding: var(--space-md);
+    }
+    
+    .container {
+        padding: 0 var(--space-sm);
+    }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    main {
+        padding: var(--space-xl);
+    }
+}
